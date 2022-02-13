@@ -1,0 +1,101 @@
+﻿﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Equipment Tracking</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+   
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #00ccff">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <strong>@Html.ActionLink("EquipmentTRACKING", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "color:#000000" })</strong>
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"> 
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @style = "color:#708090; text-color:#708090" })</li>
+                    <li class="dropdown" style="color:#000000">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Equipment Classifications
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                @Html.ActionLink("View", "Index", "EquipmentClassification", new { area = "" }, new { @style = "color:#000000" })
+                            </li>
+                            <li>
+                                @Html.ActionLink("Create", "Create", "EquipmentClassification", new { area = "" }, new { @style = "color:#000000" })
+                            </li>
+                            <li>
+                                @Html.ActionLink("Edit", "Index", "EquipmentClassification", new { area = "" }, new { @style = "color:#000000" })
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                @Html.ActionLink("Delete", "Index", "EquipmentClassification", new { area = "" }, new { @style = "color:#000000" })
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Equipment(s)
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                @Html.ActionLink("View", "Index", "Equipment", new { area = "" }, new { @style = "color:#000000" })
+                            </li>
+                            <li>
+                                @Html.ActionLink("Create", "Create", "Equipment", new { area = "" }, new { @style = "color:#000000" })
+                            </li>
+                            <li>
+                                @Html.ActionLink("Edit", "Index", "Equipment", new { area = "" }, new { @style = "color:#000000" })
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                @Html.ActionLink("Delete", "Index", "Equipment", new { area = "" }, new { @style = "color:#000000" })
+                            </li>
+                        </ul>
+                    <li />
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Equipment Movement Log
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                @Html.ActionLink("View", "Index", "EquipmentMovementLog", new { area = "" }, new { @style = "color:#000000" })
+                            </li>
+                            <li>
+                                @Html.ActionLink("Create", "Create", "EquipmentMovementLog", new { area = "" }, new { @style = "color:#000000" })
+                            </li>
+                           
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p class="text-center">&copy; @DateTime.Now.Year - Equipment tracking inc.</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="@Url.Content("~/Scripts/EquipmentTracking.js")"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

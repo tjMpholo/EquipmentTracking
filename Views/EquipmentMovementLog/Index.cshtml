@@ -1,0 +1,76 @@
+﻿@model IEnumerable<EquipmentTracking.Models.EquipmentMovementLog>
+
+@{
+    ViewBag.Title = "Equipment Movement Log";
+}
+
+<h2>Equipment Movement Log</h2>
+
+<p>
+    @Html.ActionLink("Create a new movement log", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Equipment.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LogDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direction)
+        </th>
+        <th>
+            Operations
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <strong>
+                    @Html.DisplayFor(modelItem => item.Equipment.EquipmentClassification.Name)
+                </strong>
+                -
+                @Html.DisplayFor(modelItem => item.Equipment.Name)
+                (@Html.DisplayFor(modelItem => item.Equipment.Code))
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LogDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direction)
+            </td>
+            <td>
+                <a href="@Url.Action("Details", "EquipmentMovementLog", new { id = item.EquipmentMovementLogID })" class="">
+                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
+                </a>
+
+                @*
+                    <a href="@Url.Action("Edit", "EquipmentMovementLog", new { id = item.EquipmentMovementLogID, })" class="">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    </a>
+                *@
+                @*<a href="@Url.Action("Delete", "EquipmentMovementLog", new { id = item.EquipmentMovementLogID, })" class="">
+                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                </a>*@
+
+            </td>
+        </tr>
+    }
+
+</table>
