@@ -18,3 +18,6 @@ Open the EquipmentTracking directory and open the EquipmentTracking.sln
 - Open the Nuget Package Manager Console and run the following command.
 > Install-Package EntityFramework
 
+
+PLEASE FIND THE SQL SERVER DATABASE SCRIPTS QUESTION 9 AND 10 INSIDE THE App_Data directory with the project.
+
